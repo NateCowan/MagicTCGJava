@@ -1,6 +1,7 @@
 package main.TCG.Card;
 
 import main.TCG.Card.Effects.EffectStrategy;
+import main.TCG.Events.EventType;
 import main.TCG.Player;
 
 public class EffectCard extends Card {
@@ -17,7 +18,7 @@ public class EffectCard extends Card {
         effect.apply(owner, opponent);
         owner.getGame().getEventManager().notify(
                 new main.TCG.Events.GameEvent(
-                        main.TCG.Events.GameEvent.EventType.CARD_PLAYED,
+                        EventType.CARD_PLAYED,
                         owner,
                         opponent,
                         this

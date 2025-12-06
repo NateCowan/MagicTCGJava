@@ -1,5 +1,6 @@
 package main.TCG.Card;
 
+import main.TCG.Events.EventType;
 import main.TCG.Player;
 
 public class CreatureCard extends Card implements ICreature {
@@ -76,7 +77,7 @@ public class CreatureCard extends Card implements ICreature {
         System.out.println(owner.getName() + " summons " + name + " (" + damage + "/" + maxHealth + ")");
         owner.getGame().getEventManager().notify(
                 new main.TCG.Events.GameEvent(
-                        main.TCG.Events.GameEvent.EventType.CREATURE_SUMMONED,
+                        EventType.CREATURE_SUMMONED,
                         owner, opponent, this
                 )
         );

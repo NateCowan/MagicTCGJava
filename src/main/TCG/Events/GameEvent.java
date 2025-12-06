@@ -3,8 +3,6 @@ package main.TCG.Events;
 import main.TCG.Player;
 
 public class GameEvent {
-    public enum EventType { CREATURE_SUMMONED, CARD_PLAYED, PLAYER_DAMAGED }
-
     private EventType type;
     private Player source;
     private Player target;

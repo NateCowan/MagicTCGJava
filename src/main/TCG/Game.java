@@ -38,7 +38,7 @@ public class Game {
 
         int turnNumber = 1;
         while (!isOver()) {
-            System.out.println("\n" + "=".repeat(60));
+            System.out.println("\n" + "=".repeat(60)); // Got from ChatGPT
             System.out.println("                       TURN " + turnNumber);
             System.out.println("=".repeat(60));
 
@@ -65,29 +65,22 @@ public class Game {
         System.out.println("\n>>> " + current.getName() + "'s TURN <<<");
         displayGameState(current, opponent);
 
-        // PHASE 1: UNTAP
         untapPhase(current);
-
-        // PHASE 2: DRAW
         drawPhase(current);
 
-        // PHASE 3: MAIN PHASE 1
         System.out.println("\n--- MAIN PHASE 1 ---");
         mainPhase(current, opponent);
 
         if (isOver()) return;
 
-        // PHASE 4: COMBAT
         System.out.println("\n--- COMBAT PHASE ---");
         combatPhase(current, opponent);
 
         if (isOver()) return;
 
-        // PHASE 5: MAIN PHASE 2
         System.out.println("\n--- MAIN PHASE 2 ---");
         mainPhase(current, opponent);
 
-        // PHASE 6: END PHASE
         endPhase(current, opponent);
     }
 

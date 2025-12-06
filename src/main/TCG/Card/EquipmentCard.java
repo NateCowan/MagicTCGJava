@@ -2,6 +2,7 @@ package main.TCG.Card;
 
 import main.TCG.AI.AbstractAIPlayer;
 import main.TCG.Card.Equipment.*;
+import main.TCG.Events.EventType;
 import main.TCG.Player;
 import java.util.List;
 import java.util.Scanner;
@@ -46,7 +47,7 @@ public class EquipmentCard extends Card {
 
         owner.getGame().getEventManager().notify(
                 new main.TCG.Events.GameEvent(
-                        main.TCG.Events.GameEvent.EventType.CARD_PLAYED,
+                        EventType.CARD_PLAYED,
                         owner, opponent, this
                 )
         );
