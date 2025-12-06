@@ -1,4 +1,4 @@
-package main.TCG.Card.Decorators;
+package main.TCG.Card.Equipment;
 
 import main.TCG.Card.Card;
 import main.TCG.Card.ICreature;
