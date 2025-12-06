@@ -6,13 +6,13 @@ import main.TCG.Player;
 
 import java.util.List;
 
+// Template Pattern
 public abstract class AbstractAIPlayer extends Player {
 
     public AbstractAIPlayer(String name, int health) {
         super(name, health);
     }
 
-    // Abstract playTurn: just play cards (max 3 per turn)
     public void playTurn(Player opponent) {
         int cardsPlayed = 0;
         int maxCardsPerTurn = 3;
@@ -35,5 +35,6 @@ public abstract class AbstractAIPlayer extends Player {
         }
     }
 
+    // Subclasses implement this to define AI behavior
     protected abstract Card chooseCardToPlay(Player opponent);
 }

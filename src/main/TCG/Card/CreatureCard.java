@@ -20,6 +20,7 @@ public class CreatureCard extends Card implements ICreature {
         this.summoningSickness = true;
     }
 
+    // Tapped state management
     public boolean isTapped() {
         return tapped;
     }
@@ -28,14 +29,13 @@ public class CreatureCard extends Card implements ICreature {
         this.tapped = tapped;
     }
 
-    // Damage accumulates during turn, resets at end
     public void takeCombatDamage(int amount) {
         this.damageMarkedThisTurn += amount;
         System.out.println("  " + name + " takes " + amount + " damage");
     }
 
     public int getCurrentHealth() {
-        return Math.max(0, currentHealth - damageMarkedThisTurn); // Current health considers damage marked this turn
+        return Math.max(0, currentHealth - damageMarkedThisTurn);
     }
 
     public boolean isAlive() {
@@ -75,17 +75,20 @@ public class CreatureCard extends Card implements ICreature {
         owner.getBattlefield().add(this);
         System.out.println(owner.getName() + " summons " + name + " (" + damage + "/" + maxHealth + ")");
         owner.getGame().getEventManager().notify(
-                new main.TCG.Events.GameEvent(main.TCG.Events.GameEvent.EventType.CREATURE_SUMMONED, owner, opponent, this)
+                new main.TCG.Events.GameEvent(
+                        main.TCG.Events.GameEvent.EventType.CREATURE_SUMMONED,
+                        owner, opponent, this
+                )
         );
     }
 
     @Override
     public String toString() {
-        String info = "";
-        if (tapped) info += " [TAPPED]";
-        if (summoningSickness) info += " [Summoning Sickness]";
-        if (damageMarkedThisTurn > 0) info += " [" + damageMarkedThisTurn + " dmg marked]";
+        String status = "";
+        if (tapped) status += " [TAPPED]";
+        if (summoningSickness) status += " [Summoning Sickness]";
+        if (damageMarkedThisTurn > 0) status += " [" + damageMarkedThisTurn + " dmg marked]";
 
-        return name + " (" + damage + "/" + getCurrentHealth() + ")" + info;
+        return name + " (" + damage + "/" + getCurrentHealth() + ")" + status;
     }
 }
