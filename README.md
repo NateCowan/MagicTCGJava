@@ -80,10 +80,10 @@ This project demonstrates **5 design patterns** as required:
 
 Potential features for future development:
 - Mana system for casting costs
-- More card types (instants, enchantments, artifacts)
+- More card types
 - Special abilities (flying, first strike, trample)
 - Deck customization
-- Multiplayer support (3+ players)
-- GUI interface with Swing or JavaFX
+- More players
+- GUI interface
 - Save/load game state
 - Card rarity and deck building restrictions
