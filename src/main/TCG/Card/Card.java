@@ -2,6 +2,7 @@ package main.TCG.Card;
 
 import main.TCG.Player;
 
+// Template Pattern?
 public abstract class Card implements ICard {
     String name;
 

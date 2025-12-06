@@ -24,7 +24,7 @@ public class Main {
         aggressiveAIPlayer.setDeck(deck2);
         aiPlayer.setDeck(deck3);
 
-        Game game = new Game(player, aiPlayer);
+        Game game = new Game(aggressiveAIPlayer, aiPlayer);
         game.start();
     }
 }

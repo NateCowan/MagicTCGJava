@@ -2,6 +2,7 @@ package main.TCG.Card.Effects;
 
 import main.TCG.Player;
 
+// Strategy Pattern
 public class DamageEffect implements EffectStrategy {
     private int damage;
     public DamageEffect(int damage) { this.damage = damage; }

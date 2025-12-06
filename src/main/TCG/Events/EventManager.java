@@ -3,6 +3,7 @@ package main.TCG.Events;
 import java.util.ArrayList;
 import java.util.List;
 
+// Observer Pattern
 public class EventManager {
     private List<EventListener> listeners = new ArrayList<>();
 
